@@ -84,39 +84,42 @@ object QuickSortFunctionalVsProcedural {
 
   def main(args: Array[String]): Unit = {
 
-    // initialize array with random int value from 0 to 9
-    val intArray = Array.fill(50000000) {
-      scala.util.Random.nextInt(50000000 - 1)
+    val arraySize = Array(10, 100, 1000, 10000, 100000, 1000000, 50000000)
+
+    for (i <- arraySize) {
+
+      // initialize array with random int value from 0 to 9
+      val intArray = Array.fill(i) {
+        scala.util.Random.nextInt(i - 1)
+      }
+
+      println("**********************************")
+      println("array size - " + i)
+      //    println("Orginal Array")
+      //    intArray.foreach { n => print(n + ",") }
+      //    println
+
+      //      println("**********************************")
+      //      readLine()
+      var t1 = System.currentTimeMillis()
+      val intSortedArray1 = functionalQuickSort(intArray)
+      var t2 = System.currentTimeMillis()
+      println("Functional Sort Time : " + (t2 - t1))
+      //    println("Sorted Array")
+      //    intSortedArray1.foreach { n => print(n + ",") }
+      //    println
+
+      //      println("**********************************")
+      //      readLine()
+      var t3 = System.currentTimeMillis()
+      val intSortedArray2 = proceduralQuickSort(intArray)
+      var t4 = System.currentTimeMillis()
+      println("Procedural Sort Time : " + (t4 - t3))
+      //    println("Sorted Array")
+      //    intSortedArray2.foreach { n => print(n + ",") }
+      //    println
+
+      //      readLine()
     }
-
-    println("**********************************")
-
-    //    println("Orginal Array")
-    //    intArray.foreach { n => print(n + ",") }
-    //    println
-
-    println("**********************************")
-
-    //    readLine()
-    //    var t1 = System.currentTimeMillis()
-    //    val intSortedArray = functionalQuickSort(intArray)
-    //    var t2 = System.currentTimeMillis()
-    //    println("Functional Sort Time : " + (t2 - t1))
-    //    println("Sorted Array")
-    //    intSortedArray.foreach { n => print(n + ",") }
-    //    println
-
-    println("**********************************")
-
-    readLine()
-    var t1 = System.currentTimeMillis()
-    proceduralQuickSort(intArray)
-    var t2 = System.currentTimeMillis()
-    println("Procedural Sort Time : " + (t2 - t1))
-    //    println("Sorted Array")
-    //    intArray.foreach { n => print(n + ",") }
-    //    println
-
-    readLine()
   }
 }
