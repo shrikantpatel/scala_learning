@@ -2,9 +2,10 @@ import scala.math._
 
 object HelloWorld {
 
-  def main(args: Array[String]) : Unit = {
-    for (i <- 0 to 10)
+  def main(args: Array[String]): Unit = {
+    for (i <- 0 to 10) {
       println(fact(i))
+    }
 
     println(abs(-10))
   }
