@@ -22,21 +22,21 @@ object JobScheduler {
 
     var jobCanBeExecuted = false
 
-    for (i <- 0 to jobMem.length-1) {
-
-      jobCanBeExecuted = false
-
-      for (j <- 0 to serverMem.length-1) {
-
-        if (jobMem(i) <= serverMem(j) && !jobCanBeExecuted) {
-          serverMem(j) = serverMem(j) - jobMem(i)
-          jobCanBeExecuted = true
-        }
-      }
-
-      if (!jobCanBeExecuted) return jobCanBeExecuted
-
-    }
+//    for (i <- 0 to jobMem.length-1) {
+//
+//      jobCanBeExecuted = false
+//
+//      for (j <- 0 to serverMem.length-1) {
+//
+//        if (jobMem(i) <= serverMem(j) && !jobCanBeExecuted) {
+//          serverMem(j) = serverMem(j) - jobMem(i)
+//          jobCanBeExecuted = true
+//        }
+//      }
+//
+//      if (!jobCanBeExecuted) return jobCanBeExecuted
+//
+//    }
 
     return true
   }
